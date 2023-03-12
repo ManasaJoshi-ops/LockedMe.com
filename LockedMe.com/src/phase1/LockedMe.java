@@ -13,15 +13,19 @@ public class LockedMe {
 	}
 	
 
-	String Welcomescreen="\t\t*******WELCOME TO LockedMe.com*******\n"
-			+ "\t\t**********By Manasa Joshi**********\n"
-			+ "\t\t**********Emp id: 108"
-			+ "\t\t*******github.com/ManasaJoshi-ops*******";
+	String Welcomescreen=""
+			+ "\t|\t\t𝗟𝗢𝗖𝗞𝗘𝗗𝗠𝗘.𝗖0𝗠\t\t\t\t |\n"
+			+ "\t|--------------------------------------------------------|\n"
+			+ "\t|\t\tBy Manasa Joshi\t\t\t\t |\n"
+			+ "\t|\t\tEmp id: 10827\t\t\t\t |\n"
+			+ "\t|\t github.com/ManasaJoshi-ops\t\t\t |\n"
+			+ "\t|gitrep:https://github.com/ManasaJoshi-ops/LockedMe.com  |\n"
+			+ "\t|--------------------------------------------------------|\n";
 	
-	String FirstMenu="1.List all files from the application\n"
+	String FirstMenu="\n1.List all files from the application\n"
 			+ "2.Secondary functions\n"
 			+ "3.Exit from the application";
-	String SecondMenu="1.Add file to the application\n"
+	String SecondMenu="\n1.Add file to the application\n"
 			+ "2.Delete from an application\n"
 			+ "3.Search for a file\n"
 			+ "4.Go back to Main Menu";
