@@ -6,15 +6,14 @@ import java.util.Scanner;
 
 public class LockedMe {
 	static String directory;
-	File folder;
+	File folder_name;
 	LockedMe(){
 		directory=System.getProperty("user.dir");
-		folder=new File(directory+"/myfiles");
-		if(!folder.exists())
-			folder.mkdirs();
-		System.out.println("Directory:"+folder.getPath());
+		folder_name=new File(directory+"/myfiles");
+		
 	}
 	
+
 	String Welcomescreen="\t\t*******WELCOME TO LockedMe.com*******\n"
 			+ "\t\t**********By Manasa Joshi**********\n"
 			+ "\t\t*******github.com/ManasaJoshi-ops*******";
@@ -35,6 +34,7 @@ public class LockedMe {
 		int option=sc.nextInt();
 		switch(option) {
 		case 1: listFiles();
+		        mainMenu();
 		        break;
 		case 2: secondaryFunctions();
 		        break;
@@ -49,18 +49,18 @@ public class LockedMe {
 	
 	
 private void listFiles() {
-	 String path="/Users/manasajoshi/Desktop/phase1project/LockedMe.com/LockedMe.com/myfiles";
-	 File file=new File(path);
-	 File dir[]=file.listFiles();
-	 Arrays.sort(dir);
-	 if(dir.length!=0) {
-	 for(File e:dir) {
-	     System.out.println(e.getName());
-	 }}
-	 else {
-		 System.out.println("Directory is Empty..");
-	 }
-}
+	  String [] list=folder_name.list();
+	  if(list.length==0) {
+		  System.out.println("The directory is Empty..");
+	  }else {
+	  System.out.println("The files are");
+	  Arrays.sort(list);
+	  for(String s:list) {
+		  System.out.println(s);
+	  }
+	  }
+  }
+	
 
 
 private void secondaryFunctions() {
@@ -83,10 +83,9 @@ private void secondaryFunctions() {
 			System.out.println("Kindly select from the above menu");
 		}
 }
-		
-		
 	
 private void createFile() {
+	String path="/Users/manasajoshi/Desktop/phase1project/LockedMe.com/LockedMe.com/myfiles";
 	
 	
 }
