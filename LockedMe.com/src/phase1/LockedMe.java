@@ -9,13 +9,13 @@ public class LockedMe {
 	File folder_name;
 	LockedMe(){
 		directory=System.getProperty("user.dir");
-		folder_name=new File(directory+"/myfiles");
-		
+		folder_name=new File(directory+"/myfiles");	
 	}
 	
 
 	String Welcomescreen="\t\t*******WELCOME TO LockedMe.com*******\n"
 			+ "\t\t**********By Manasa Joshi**********\n"
+			+ "\t\t**********Emp id: 108"
 			+ "\t\t*******github.com/ManasaJoshi-ops*******";
 	
 	String FirstMenu="1.List all files from the application\n"
@@ -23,7 +23,7 @@ public class LockedMe {
 			+ "3.Exit from the application";
 	String SecondMenu="1.Add file to the application\n"
 			+ "2.Delete from an application\n"
-			+ "3. search for a file\n"
+			+ "3.Search for a file\n"
 			+ "4.Go back to Main Menu";
 	
 	void mainMenu() {
@@ -47,20 +47,18 @@ public class LockedMe {
 		
 	}
 	
-	
-private void listFiles() {
-	  String [] list=folder_name.list();
-	  if(list.length==0) {
-		  System.out.println("The directory is Empty..");
-	  }else {
-	  System.out.println("The files are");
-	  Arrays.sort(list);
-	  for(String s:list) {
-		  System.out.println(s);
+	private void listFiles() {
+		  String[] list=folder_name.list();
+		  if(list.length==0) {
+			  System.out.println("The directory is Empty..");
+		  }else {
+		  System.out.println("The files are");
+		  Arrays.sort(list);
+		  for(String s:list) {
+			  System.out.println(s);
+		  }
+		  }
 	  }
-	  }
-  }
-	
 
 
 private void secondaryFunctions() {
@@ -74,8 +72,10 @@ private void secondaryFunctions() {
 		        secondaryFunctions();
 		        break;
 		case 2: deleteFile();
+		        secondaryFunctions();
 		        break;
 		case 3: searchFile();
+		        secondaryFunctions();
 		        break;
 		case 4: mainMenu();
 		default: System.exit(0);
@@ -104,12 +104,32 @@ private void createFile() {
 	
 }
 private void deleteFile() {
-	
+	System.out.println("Enter the name of the file to be deleted..");
+	Scanner sc=new Scanner(System.in);
+	String file_name=sc.next();
+	File file=new File(folder_name,file_name);
+	String[] str=folder_name.list();
+	for(String s1:str) {
+		if(file_name.equals(s1) && file.delete() ) {
+			System.out.println("File deleted..");
+			return;
+		}
+	}
+	System.out.println("File not found FNF");
 	
 }
 private void searchFile() {
-	
-}
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the name of the file to be searched..");
+	String file_name = sc.next();
+	String[] list =folder_name.list();
+	for(String s1:list) {
+	if(file_name.equals(s1)) {
+		System.out.println("File "+file_name+" exists\n\n");
+		return;
+	}
+	}System.out.println("File "+file_name+" doesnt exists");
+	}
 
 
 public static void main(String[] args) {
