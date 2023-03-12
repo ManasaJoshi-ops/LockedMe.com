@@ -1,8 +1,19 @@
 package phase1;
 
+import java.io.File;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class LockedMe {
+	static String directory;
+	File folder;
+	LockedMe(){
+		directory=System.getProperty("user.dir");
+		folder=new File(directory+"/myfiles");
+		if(!folder.exists())
+			folder.mkdirs();
+		System.out.println("Directory:"+folder.getPath());
+	}
 	
 	String Welcomescreen="\t\t*******WELCOME TO LockedMe.com*******\n"
 			+ "\t\t**********By Manasa Joshi**********\n"
@@ -38,8 +49,18 @@ public class LockedMe {
 	
 	
 private void listFiles() {
-		
-	}
+	 String path="/Users/manasajoshi/Desktop/phase1project/LockedMe.com/LockedMe.com/myfiles";
+	 File file=new File(path);
+	 File dir[]=file.listFiles();
+	 Arrays.sort(dir);
+	 if(dir.length!=0) {
+	 for(File e:dir) {
+	     System.out.println(e.getName());
+	 }}
+	 else {
+		 System.out.println("Directory is Empty..");
+	 }
+}
 
 
 private void secondaryFunctions() {
@@ -55,17 +76,18 @@ private void secondaryFunctions() {
 		        break;
 		case 3: searchFile();
 		        break;
-		case 4: System.out.println(FirstMenu);
+		case 4: mainMenu();
 		default: System.exit(0);
 		}
 		}catch(Exception e) {
 			System.out.println("Kindly select from the above menu");
 		}
+}
 		
 		
-	}
+	
 private void createFile() {
-
+	
 	
 }
 private void deleteFile() {
@@ -79,5 +101,7 @@ private void searchFile() {
 public static void main(String[] args) {
 	LockedMe obj=new LockedMe();
 	System.out.println(obj.Welcomescreen);
+	obj.mainMenu();
+	
 }
 }
