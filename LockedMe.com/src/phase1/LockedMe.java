@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class LockedMe {
 	static String directory;
-	File folder_name;
+    File folder_name;
 	LockedMe(){
 		directory=System.getProperty("user.dir");
 		folder_name=new File(directory+"/myfiles");	
