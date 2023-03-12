@@ -1,6 +1,6 @@
 package phase1;
-
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -71,6 +71,7 @@ private void secondaryFunctions() {
 		int choice=scan.nextInt();
 		switch(choice) {
 		case 1: createFile();
+		        secondaryFunctions();
 		        break;
 		case 2: deleteFile();
 		        break;
@@ -85,11 +86,25 @@ private void secondaryFunctions() {
 }
 	
 private void createFile() {
-	String path="/Users/manasajoshi/Desktop/phase1project/LockedMe.com/LockedMe.com/myfiles";
+	System.out.println("Enter the name of the file :");
+	Scanner sc=new Scanner(System.in);
+	String file_name=sc.next();
+	File file=new File("myfiles",file_name);
+	try {
+		if(file.createNewFile()) {
+			System.out.println("File created successfully");
+		}
+		else {
+			System.out.println("File already exists");
+		}
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
 	
 	
 }
 private void deleteFile() {
+	
 	
 }
 private void searchFile() {
