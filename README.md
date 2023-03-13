@@ -36,7 +36,6 @@ Java Concepts used:
 • Looping Statements
 • Conditional Statements
 
-GitHub link: https://github.com/ManasaJoshi-ops/LockedMe.com
 
 Conclusion : This project runs on Command line UI, so we can add proper Frontend and
 also perform file operations like writing in the file viewing the file etc
