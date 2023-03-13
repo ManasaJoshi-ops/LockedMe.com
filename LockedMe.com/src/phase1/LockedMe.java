@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class LockedMe {
 	static String directory;
@@ -52,16 +53,20 @@ public class LockedMe {
 	}
 	
 	private void listFiles() {
-		  String[] list=folder_name.list();
-		  if(list.length==0) {
-			  System.out.println("The directory is Empty..");
-		  }else {
-		  System.out.println("The files are");
-		  Arrays.sort(list);
-		  for(String s:list) {
-			  System.out.println(s);
-		  }
-		  }
+		File fs =new File("myfiles");
+		File file[]=fs.listFiles();
+		TreeSet<String> ts=new TreeSet<String>();
+		
+		if(fs.length()!=0) {
+			for(File i:file) {
+				ts.add(i.getName());
+			}
+		}else {System.out.println("Directory is Empty..");
+		}
+		for(String i:ts) {
+			System.out.println(i);
+		}
+		
 	  }
 
 
