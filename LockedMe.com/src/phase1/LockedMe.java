@@ -24,7 +24,7 @@ public class LockedMe {
 			+ "\t|--------------------------------------------------------|\n";
 	
 	String FirstMenu="\n1.List all files from the application\n"
-			+ "2.Secondary functions\n"
+			+ "2.Business Level Operations\n"
 			+ "3.Exit from the application";
 	String SecondMenu="\n1.Add file to the application\n"
 			+ "2.Delete from an application\n"
@@ -41,7 +41,7 @@ public class LockedMe {
 		case 1: listFiles();
 		        mainMenu();
 		        break;
-		case 2: secondaryFunctions();
+		case 2: BusinessLevelOperations();
 		        break;
 		case 3: System.exit(0);
 		default: mainMenu();
@@ -70,7 +70,7 @@ public class LockedMe {
 	  }
 
 
-private void secondaryFunctions() {
+private void BusinessLevelOperations() {
 		System.out.println(SecondMenu);
 		try {
 		System.out.println("Select any option from above:");
@@ -78,13 +78,13 @@ private void secondaryFunctions() {
 		int choice=scan.nextInt();
 		switch(choice) {
 		case 1: createFile();
-		        secondaryFunctions();
+		        BusinessLevelOperations();
 		        break;
 		case 2: deleteFile();
-		        secondaryFunctions();
+		        BusinessLevelOperations();
 		        break;
 		case 3: searchFile();
-		        secondaryFunctions();
+		        BusinessLevelOperations();
 		        break;
 		case 4: mainMenu();
 		default: System.exit(0);
